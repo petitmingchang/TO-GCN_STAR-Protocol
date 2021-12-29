@@ -342,7 +342,7 @@ int main(int argc, char* argv[]) {
             Read_TF_level(input_file3);
 
             printf("No. of TFs: %d\n", num_of_TFs);
-            printf("No. of non-TF Genes: %d\n", num_of_genes);
+            printf("No. of non-TF genes: %d\n", num_of_genes);
             printf("No. of time points: %d\n", num_of_point_LD);
             //printf("No. of samples under Cond.2: %d\n", num_of_point_TD);
             printf("Cutoff: %1.2lf\n\n", pos_cutoff_LD);

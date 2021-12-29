@@ -377,10 +377,10 @@ int main(int argc, char* argv[]) {
             Read_Time_Course_Data_genes(input_file2);
             Read_seed_genes(input_file3);
 
-            printf("Number of TFs: %d\n", num_of_TFs);
-            printf("Number of time points: %d\n", num_of_point_LD);
-            printf("Number of initial TF seeds: %d\n", num_of_seeds);
-            printf("Cutoff: %1.3lf\n\n", pos_cutoff_LD);
+            printf("No. of TFs: %d\n", num_of_TFs);
+            printf("No. of time points: %d\n", num_of_point_LD);
+            printf("No. of initial TF seeds: %d\n", num_of_seeds);
+            printf("Cutoff: %1.2lf\n\n", pos_cutoff_LD);
             printf("Assigning levels for nodes in GCN by Breadth-First-Search (BFS) method......\n");
         
             node_pair_generator_LD();
