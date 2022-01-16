@@ -134,12 +134,16 @@ void Read_Time_Course_Data_genes (char *input) {
 void Read_TF_level (char *input) {
 	FILE *fptr = fopen(input, "r");
 	char GID[20];
+	char col_1[20];
+	char col_2[20];
 	//char header1[20];
 	//char header2[20];
 	int LV;
 	int num_of_lines = 0;
 
 	max_level = 0;
+	
+	fscanf(fptr, "%s, %s", col_1, col_2);
 	while(fscanf(fptr, "%s,", GID) != EOF) {
 		fscanf(fptr,"\t%d", &LV);
 		if (LV > max_level) max_level = LV;
@@ -160,6 +164,7 @@ void Read_TF_level (char *input) {
 		TF_exp_table[i].level[0] = 0;
 	}
 
+	fscanf(fptr, "%s, %s", col_1, col_2);
 	while(fscanf(fptr, "%s,", GID) != EOF) {
 		fscanf(fptr,"\t%d", &LV);
 		for(int i=0; i<num_of_TFs; i++) {
@@ -276,6 +281,7 @@ void node_pair_generator_LD_or_TD() {
     	//fprintf(fout1,"\n");
     }
     
+    
     fprintf(fout2, "Gene ID");
     for(int i=1; i<max_level+1; i++) {
     	fprintf(fout2, ",level %d", i);
@@ -301,7 +307,7 @@ void node_pair_generator_LD_or_TD() {
     	}
     	fprintf(fout2, "\n");
     }
-    
+
     fclose(fout1);
     fclose(fout2);
 }
