@@ -306,10 +306,12 @@ void level_assignment() {
     }
 }
 
-void function_three () {
+void print_level_table () {
     FILE *fout3;
     
     fout3 = fopen("Node_level.tsv","w");
+    
+    fprintf(fout3, "TF_gene_ID\tassigned_level\n");
     
     //fprintf(fout3, "TF gene ID,level in GCN\n");
     for(int i=0; i<num_of_TFs; i++) {
@@ -385,7 +387,7 @@ int main(int argc, char* argv[]) {
         
             node_pair_generator_LD();
             level_assignment();
-            function_three();
+            print_level_table();
             print_relation_table();
         
             printf("Done!\n");
