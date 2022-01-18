@@ -249,7 +249,7 @@ void function_one () {
     
     pos_cutoff_LD = pos_cutoff_LD + 2;
     
-    printf("Recommended cutoff = %1.2lf\n", bin[pos_cutoff_LD]);
+    printf("Cutoff value for your reference: %1.2lf ~ %1.2lf\n", bin[pos_cutoff_LD]-0.02, bin[pos_cutoff_LD]+0.02);
     //printf("Cutoff of negative coexpression = %1.2lf\n", bin[neg_cutoff_LD]);
 }
 
