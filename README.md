@@ -29,11 +29,11 @@ In addition to the suggested cutoff values, the program will also generate a fil
 
 The second step is to determine the time-order (level) of TF genes in the GCN. The time-order is assigned by the breadth-first search (BFS) algorithm, starting with a set of seed nodes you chose (listed in file of initial_seed.txt). In most case, we will select some genes as seeds that highly expressed in the first time point and lowly expressed in the following time points. In our study, we select a gene with ID, ENSG00000175592, and run the TO-GCN program to assign the time-order (level) in GCN. Besides, we also need the cutoff recommended in the 1st step. Two output files Node_relation.csv and Node_level.tsv can be both imported into the [Cytoscape](http://www.cytoscape.org) to visualize the network. 
 ```sh
-TO-GCN 5 example_data/TF_gene_matrix.tsv example_data/initial_seed.txt 0.94
+TO-GCN 5 example_data/TF_gene_matrix.tsv example_data/initial_seed.txt 0.9
 ```
 ### (2) GeneLevel: Generate a list of genes in each TO-GCN level
 
 In the final step, we want to list a set of genes (TF and non-TF genes) for each level in TO-GCN. So we need 5 parameters, number of time points, matrix of TF genes, matrix of non-TF genes, TF genes with assigned levels (output from 2nd step), and the recommended cutoff. This program output the gene list for each level in two formats. You can run GO or pathway enrichment test for these gene sets to get the dynamic biological processes during different time period. Here is an example:
 ```sh
-GeneLevel 5 example_data/TF_gene_matrix.tsv example_data/Non-TF_gene_matrix.tsv Node_level.tsv 0.94
+GeneLevel 5 example_data/TF_gene_matrix.tsv example_data/Non-TF_gene_matrix.tsv Node_level.tsv 0.9
 ```
