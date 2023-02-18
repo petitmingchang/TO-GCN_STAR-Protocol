@@ -143,7 +143,7 @@ void Read_TF_level (char *input) {
 
 	max_level = 0;
 	
-	fscanf(fptr, "%s, %s", col_1, col_2);
+	fscanf(fptr, "%s\t%s", col_1, col_2);
 	while(fscanf(fptr, "%s,", GID) != EOF) {
 		fscanf(fptr,"\t%d", &LV);
 		if (LV > max_level) max_level = LV;
@@ -164,7 +164,7 @@ void Read_TF_level (char *input) {
 		TF_exp_table[i].level[0] = 0;
 	}
 
-	fscanf(fptr, "%s, %s", col_1, col_2);
+	fscanf(fptr, "%s\t %s", col_1, col_2);
 	while(fscanf(fptr, "%s,", GID) != EOF) {
 		fscanf(fptr,"\t%d", &LV);
 		for(int i=0; i<num_of_TFs; i++) {
